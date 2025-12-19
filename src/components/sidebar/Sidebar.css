@@ -1,0 +1,220 @@
+/* ================= SIDEBAR BASE ================= */
+
+.sidebar {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--sidebar-bg);
+  padding: 25px 15px;
+  transition: width 0.3s ease;
+}
+
+/* ================= DESKTOP SIDEBAR ================= */
+
+.sidebar.desktop {
+  width: 250px;
+  overflow: hidden;
+}
+
+.sidebar.desktop:not(.open) {
+  width: 90px; /* collapsed */
+}
+
+/* ================= ICONS ================= */
+
+.sidebar .icon {
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--secondary-text);
+}
+
+/* ================= TOP SECTION ================= */
+
+.sidebar .top {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+/* ================= NEW CHAT ================= */
+
+.sidebar .new-chat {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  border-radius: 50px;
+  font-size: 14px;
+  color: var(--secondary-text);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar .new-chat:hover {
+  background-color: var(--hover-bg);
+}
+
+/* Hide text smoothly when collapsed */
+.sidebar.desktop:not(.open) .new-chat p {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+/* ================= RECENTS ================= */
+
+.sidebar .recent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 4px;
+
+  /* animation */
+  transition: 
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.sidebar.desktop:not(.open) .recent {
+  opacity: 0;
+  transform: translateY(-5px);
+  pointer-events: none;
+}
+
+.sidebar .recent-title {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: var(--secondary-text);
+}
+
+/* ================= RECENT ITEM ================= */
+
+.sidebar .recent-entry {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px 10px 10px;
+  border-radius: 50px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.sidebar .recent-entry:hover {
+  background-color: var(--hover-bg);
+}
+
+.sidebar .recent-entry .icon {
+  flex-shrink: 0;
+}
+
+.sidebar .recent-entry .entry-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.sidebar .recent-entry .entry-content p {
+  margin: 0;
+  flex: 1;
+}
+
+/* Trash Icon */
+.sidebar .recent-entry .trash-icon {
+  opacity: 0.5;
+  font-size: 14px;
+  margin-left: 10px;
+  color: var(--secondary-text);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar .recent-entry .trash-icon:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* ================= SCROLLBAR ================= */
+
+.sidebar .recent::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar .recent::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+
+.sidebar .recent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ================= BOTTOM ACTIONS ================= */
+
+.sidebar .bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.sidebar .bottom-item {
+  cursor: pointer;
+  color: var(--secondary-text);
+}
+
+.sidebar .bottom-icon {
+  font-size: 20px;
+  color: var(--secondary-text);
+}
+
+/* ================= MOBILE SIDEBAR ================= */
+
+.sidebar.mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100dvh;
+  background-color: var(--sidebar-bg);
+  z-index: 1000;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar.mobile.open {
+  transform: translateX(0);
+}
+
+/* ================= MOBILE BACKDROP ================= */
+
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-backdrop.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ================= MOBILE CLOSE ICON ================= */
+
+.mobile .close-sidebar-icon {
+  text-align: right;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--secondary-text);
+}

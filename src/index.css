@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Outfit;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+}
+
+:root {
+  --bg-color: #ffffff;
+  --sidebar-bg: #f0f4f9;
+  --card-bg: #f0f4f9;
+  --hover-bg: #e2e6eb;
+  --text-color: #282828;
+  --secondary-text: #585858;
+  --search-bg: #f0f4f9;
+  --icon-bg: #ffffff;
+  --prompt-bg: #e9eef6;
+}
+
+/* DARK THEME */
+body.dark {
+  --bg-color: #0f0f0f;
+  --sidebar-bg: #1b1b1b;
+  --card-bg: #1d1d1d;
+  --hover-bg: #2a2a2a;
+  --text-color: #e6e6e6;
+  --secondary-text: #c7c7c7;
+  --search-bg: #1e1e1e;
+  --icon-bg: #2d2d2d;
+  --prompt-bg: #1e1e1e;
+}
+
+* {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
