@@ -4,11 +4,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Outfit;
+  font-family: "Outfit", sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
 }
 
 #root {
-  min-height: 100vh;
   display: flex;
 }
 
@@ -24,7 +32,6 @@
   --prompt-bg: #e9eef6;
 }
 
-/* DARK THEME */
 body.dark {
   --bg-color: #0f0f0f;
   --sidebar-bg: #1b1b1b;
@@ -36,8 +43,3 @@ body.dark {
   --icon-bg: #2d2d2d;
   --prompt-bg: #1e1e1e;
 }
-
-* {
-  transition: background-color 0.25s ease, color 0.25s ease;
-}
-

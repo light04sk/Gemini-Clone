@@ -1,17 +1,15 @@
 /* ================= SIDEBAR BASE ================= */
 
 .sidebar {
-  min-height: 100vh;
-  height: 100vh;
+  height: 100dvh;              
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   background-color: var(--sidebar-bg);
   padding: 25px 15px;
   transition: width 0.3s ease;
+  overflow: hidden;            
 }
 
-/* ================= DESKTOP SIDEBAR ================= */
 
 .sidebar.desktop {
   width: 250px;
@@ -22,7 +20,6 @@
   width: 90px; /* collapsed */
 }
 
-/* ================= ICONS ================= */
 
 .sidebar .icon {
   font-size: 20px;
@@ -30,7 +27,6 @@
   color: var(--secondary-text);
 }
 
-/* ================= TOP SECTION ================= */
 
 .sidebar .top {
   display: flex;
@@ -39,7 +35,6 @@
   min-height: 0;
 }
 
-/* ================= NEW CHAT ================= */
 
 .sidebar .new-chat {
   margin-top: 50px;
@@ -58,14 +53,12 @@
   background-color: var(--hover-bg);
 }
 
-/* Hide text smoothly when collapsed */
 .sidebar.desktop:not(.open) .new-chat p {
   opacity: 0;
   width: 0;
   overflow: hidden;
 }
 
-/* ================= RECENTS ================= */
 
 .sidebar .recent {
   display: flex;
@@ -74,7 +67,6 @@
   overflow-y: auto;
   padding-right: 4px;
 
-  /* animation */
   transition: 
     opacity 0.25s ease,
     transform 0.25s ease;
@@ -92,7 +84,6 @@
   color: var(--secondary-text);
 }
 
-/* ================= RECENT ITEM ================= */
 
 .sidebar .recent-entry {
   display: flex;
@@ -138,7 +129,6 @@
   transform: scale(1.2);
 }
 
-/* ================= SCROLLBAR ================= */
 
 .sidebar .recent::-webkit-scrollbar {
   width: 6px;
@@ -153,7 +143,6 @@
   background: transparent;
 }
 
-/* ================= BOTTOM ACTIONS ================= */
 
 .sidebar .bottom {
   display: flex;
